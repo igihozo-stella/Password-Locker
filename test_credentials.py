@@ -28,18 +28,24 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.credentials_list), 1)
 
     def test_save_multiple_credentials(self):
-        """Method that saves multiple credentials to credentials_list"""
+        '''
+        Method that saves multiple credentials to credentials list
+        '''
         self.new_credentials.save_credentials()
         new_test_credential = Credentials("Instagram","stella_igihozo", "34567")
         new_test_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
 
     def tearDown(self):
-        """Method that clears the credentials_list after every test to ensure that there is no error"""
+        '''
+        Method that clears the credentials list after every test to ensure that there is no error
+        '''
         Credentials.credentials_list = []
 
     def test_find_credential_by_name(self):
-        """Test to check if we can find credentials and display information"""
+        '''
+        Test to check if we can find credentials and display information
+        '''
         self.new_credentials.save_credentials()
         new_test_credential = Credentials("Instagram","stella_igihozo", "34567")
         new_test_credential.save_credentials()
@@ -49,7 +55,9 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(found_credential.site_name, new_test_credential.site_name)
 
     def test_display_all_credentials(self):
-        """TestCase to test whether all contacts can be displayed"""
+        '''
+        Test to test whether all contacts can be displayed
+        '''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
 
 
