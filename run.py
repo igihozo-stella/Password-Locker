@@ -45,11 +45,11 @@ def main():
     while True:
         print("Welcome to PassWord Locker!")
         print('\n')
-        print("Use these short codes to select an option: Create New User use 'cu': Login to your account use 'lg' or 'ex' to exit password locker")
+        print("Use these short codes to select an option: Create Account use 'ca': Login to your account use 'li' or 'ex' to exit password locker")
         short_code = input().lower()
         print('\n')
 
-        if short_code == 'cu':
+        if short_code == 'ca':
             print("Create UserName")
             created_user_name = input()
 
@@ -89,9 +89,9 @@ def main():
 
                 while True:
                     print("1: View Your saved credentials")
-                    print("2: Add new credentials")
-                    print("3: Remove credentials")
-                    print("4: Search credentials")
+                    print("2: Add new credential")
+                    print("3: Delete credential")
+                    print("4: Search credential")
                     print("5: Log Out")
                     option = input()
 
@@ -144,7 +144,7 @@ def main():
 
                             else:
                                 print('\n')
-                                print("You don't seem to have any contacts yet")
+                                print("You don't have any credential saved yet")
                                 print('\n')
 
                             print("Back to Menu? y/n")
@@ -212,7 +212,7 @@ def main():
                         print("Please enter a valid code")
                         continue
 
-        elif short_code == 'lg':
+        elif short_code == 'li':
             print("WELCOME")
             print("Enter UserName")
             default_user_name = input()
@@ -239,9 +239,9 @@ def main():
 
             while True:
                 print("1: View Your saved credentials")
-                print("2: Add new credentials")
-                print("3: Remove credentials")
-                print("4: Search credentials")
+                print("2: Add new credential")
+                print("3: Delete credential")
+                print("4: Search credential")
                 print("5: Log Out")
                 option = input()
 
