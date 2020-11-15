@@ -10,7 +10,7 @@ class TestCredentials(unittest.TestCase):
         '''
         Set up method to run before each test case
         '''
-        self.new_credentials = Credentials("Facebook","Igihozo stella", "56789")
+        self.new_credentials = Credentials("Facebook","igihozo stella", "56789")
 
     def test_credentials(self):
         '''
@@ -18,7 +18,7 @@ class TestCredentials(unittest.TestCase):
         '''
         self.assertEqual(self.new_credentials.site_name, "Facebook")
         self.assertEqual(self.new_credentials.account_name,"igihozo stella")
-        self.assertEqual(self.new_credentials.password, "56789")
+        self.assertEqual(self.new_credentials.account_password, "56789")
 
     def test_save_credentials(self):
         '''
@@ -56,7 +56,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_display_all_credentials(self):
         '''
-        Test to test whether all contacts can be displayed
+        Test to test whether all credentials can be displayed
         '''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
 

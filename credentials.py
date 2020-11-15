@@ -5,14 +5,14 @@ class Credentials:
     
     credentials_list=[]
 
-    def __init__(self,site_name,account_name,password):
+    def __init__(self,site_name,account_name,account_password):
         '''
         method to define the properties each user object will hold
         '''
 
         self.site_name=site_name
         self.account_name=account_name
-        self.password=password
+        self.account_password=account_password
 
     def save_credentials(self):
         """Method that saves credential objects into credentials_list"""
