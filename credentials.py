@@ -26,12 +26,13 @@ class Credentials:
 
     @classmethod
     def find_by_name(cls, site_name):
-        """Method that takes in a name and returns a credential that matches that particular name
+        '''
+        Method that takes in a site name and returns a credential that matches that site name
         Args:
-            name: account_name that has a password
+            name: site_name that has an account name and a numbered password
         Returns:
-            The account_name ,site_name and it's corresponding Password
-        """
+            The site_name ,account_name and it's corresponding Password
+        '''
 
         for credential in cls.credentials_list:
             if credential.site_name == site_name:
