@@ -11,7 +11,9 @@ Igihozo Stella
 ## Installations requirements
 
 - clone this repo to your terminal with this command
-- 
+- to run this application in your terminal apply these commands
+* $ chmod +x run.py
+* $ ./run.py
 ## Testing The Application
 
 * to run the tests for the two classes credentials and user:
