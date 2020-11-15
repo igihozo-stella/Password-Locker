@@ -22,7 +22,7 @@ As a user I would like:
 
 ## Installations requirements
 
-- clone this repo to your terminal with this command $ git clone
+- clone this repo to your terminal with this command $ git clone https://github.com/igihozo-stella/Password-Locker.git
 - $ cd Password-Locker and ensure you have installed python 3.6
 - to run this application in your terminal apply these commands
 * $ chmod +x run.py
