@@ -7,7 +7,7 @@ from credentials import Credentials
 # Functions to add credentials
 
 
-def create_new_credential(account_name, account_password):
+def create_new_credential(site_name,account_name, account_password):
     """Function to create a new account and its credentials"""
     new_credential = Credentials(site_name,account_name, account_password)
     return new_credential
@@ -111,13 +111,14 @@ def main():
                                 keyword = input().lower()
                                 if keyword == 'gp':
                                     account_password = random.randint(10000, 1111111)
+                                    print(f"Site: {site_name}")
                                     print(f"Account: {account_name}")
                                     print(f"Password: {account_password}")
                                     print('\n')
                                 elif keyword == 'n':
                                     print("Create your password")
                                     account_password = input()
-                                     print(f"Account: {site_name}")
+                                    print(f"Site: {site_name}")
                                     print(f"Account: {account_name}")
                                     print(f"Password: {account_password}")
                                     print('\n')
@@ -130,13 +131,14 @@ def main():
                             elif choice == 'n':
                                 break
                             else:
-                                print("Please use 'Y' for yes or 'n' for no!")
+                                print("Please use 'y' for yes or 'n' for no!")
                     elif option == '1':
                         while True:
                             print("Below is a list of all your credentials")
                             if display_credentials():
 
                                 for credential in display_credentials():
+                                    print(f"SITE NAME:{credential.site_name}")
                                     print(f"ACCOUNT NAME:{credential.account_name}")
                                     print(f"PASSWORD:{credential.account_password}")
 
@@ -145,10 +147,10 @@ def main():
                                 print("You don't seem to have any contacts yet")
                                 print('\n')
 
-                            print("Back to Menu? Y/n")
+                            print("Back to Menu? y/n")
 
                             back = input().lower()
-                            if back == 'Y':
+                            if back == 'y':
                                 break
                             elif back == 'n':
                                 continue
@@ -160,7 +162,7 @@ def main():
                         print("WARNING! You will loose all your credentials if you log out. Are you sure? y/n")
                         logout = input().lower()
 
-                        if logout == 'Y':
+                        if logout == 'y':
                             print("You have Successfully logged out")
                             break
                         elif logout == 'n':
@@ -173,34 +175,34 @@ def main():
 
                             if check_existing_credentials(search_name):
                                 search_credential = find_credential(search_name)
-                                print(f"ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
-                                print("Delete? Y/n")
+                                print(f"SITE NAME: {search_credential.site_name} \n ACCOUNT_NAME:{search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
+                                print("Delete? y/n")
                                 sure = input().lower()
-                                if sure == 'Y':
+                                if sure == 'y':
                                     delete_credential(search_credential)
-                                    print("Account SUCCESSFULLY deleted")
+                                    print("Account deleted SUCCESSFULLY")
                                     break
                                 elif sure == 'n':
                                     continue
 
                             else:
-                                print("That Contact Does not exist")
+                                print("That Site Does not exist on the list")
                                 break
 
                     elif option == '4':
                         while True:
-                            print("Continue? Y/n")
+                            print("Continue? y/n")
                             option2 = input().lower()
-                            if option2 == 'Y':
-                                print("Enter an account name to find credentials")
+                            if option2 == 'y':
+                                print("Enter the site name to find credentials")
 
                                 search_name = input()
 
                                 if check_existing_credentials(search_name):
                                     search_credential = find_credential(search_name)
-                                    print(f"ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
+                                    print(f"SITE NAME: {search_credential.site_name} \n ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
                                 else:
-                                    print("That Contact Does not exist")
+                                    print("That Site is not on the list")
                             elif option2 == 'n':
                                 break
                             else:
@@ -245,10 +247,12 @@ def main():
 
                 if option == '2':
                     while True:
-                        print("Continue to add? Y/n")
+                        print("Continue to add? y/n")
 
                         choice = input().lower()
-                        if choice == 'Y':
+                        if choice == 'y':
+                            print("Enter The Site Name")
+                            site_name = input()
                             print("Enter The Account Name")
                             account_name = input()
                             print("Enter a password")
@@ -257,12 +261,14 @@ def main():
                             keyword = input().lower()
                             if keyword == 'gp':
                                 account_password = random.randint(10000, 1111111)
+                                print(f"Site: {site_name}")
                                 print(f"Account: {account_name}")
                                 print(f"Password: {account_password}")
                                 print('\n')
                             elif keyword == 'n':
                                 print("Create your password")
                                 account_password = input()
+                                print(f"Site: {site_name}")
                                 print(f"Account: {account_name}")
                                 print(f"Password: {account_password}")
                                 print('\n')
@@ -271,43 +277,41 @@ def main():
                                 print("Please enter a valid Code")
 
                             save_new_credential(create_new_credential(
-                                account_name, account_password))
+                                site_name,account_name, account_password))
                         elif choice == 'n':
                             break
                         else:
-                            print("Please use 'Y' for yes or 'n' for no!")
+                            print("Please use 'y' for yes or 'n' for no!")
                 elif option == '1':
                     while True:
                         print("Below is a list of all your credentials")
                         if display_credentials():
 
                             for credential in display_credentials():
+                                print(f"SITE NAME:{credential.site_name}")
                                 print(f"ACCOUNT NAME:{credential.account_name}")
                                 print(f"PASSWORD:{credential.account_password}")
 
                         else:
                             print('\n')
-                            print("You don't seem to have any contacts yet")
+                            print("You don't have any credentials yet")
                             print('\n')
 
-                        print("Back to Menu? Y/n")
+                        print("Back to Menu? y/n")
 
                         back = input().lower()
-                        if back == 'Y':
+                        if back == 'y':
                             break
                         elif back == 'n':
                             continue
                         else:
                             print("Please Enter a valid code")
-                        # elif choice1 == 'n':
-                        #     break
-                        # else:
-                        #     print("Please use y or n")
+                        
                 elif option == '5':
-                    print("WARNING! You will loose all your credentials if you log out. Are you sure? y/n")
+                    print("WARNING! You will lose all your credentials if you log out. Are you sure? y/n")
                     logout = input().lower()
 
-                    if logout == 'Y':
+                    if logout == 'y':
                         print("You have Successfully logged out")
                         break
                     elif logout == 'n':
@@ -315,40 +319,40 @@ def main():
 
                 elif option == '3':
                     while True:
-                        print("Search for credential to delete")
+                        print("Search by site name, a credential to delete")
 
                         search_name = input()
 
                         if check_existing_credentials(search_name):
                             search_credential = find_credential(search_name)
-                            print(f"ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
-                            print("Delete? Y/n")
+                            print(f"SITE NAME: {search_credential.site_name} \n ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
+                            print("Delete this? y/n")
                             sure = input().lower()
-                            if sure == 'Y':
+                            if sure == 'y':
                                 delete_credential(search_credential)
-                                print("Account SUCCESSFULLY deleted")
+                                print("Account deleted Successfully!")
                                 break
                             elif sure == 'n':
                                 continue
 
                         else:
-                            print("That Contact Does not exist")
+                            print("That Site is not on the list")
                             break
 
                 elif option == '4':
                     while True:
-                        print("Continue? Y/n")
+                        print("Continue? y/n")
                         option2 = input().lower()
-                        if option2 == 'Y':
-                            print("Enter an account name to find credentials")
+                        if option2 == 'y':
+                            print("Enter a site name to find credentials")
 
                             search_name = input()
 
                             if check_existing_credentials(search_name):
                                 search_credential = find_credential(search_name)
-                                print(f"ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
+                                print(f"SITE NAME: {search_credential.site_name} \n ACCOUNT NAME: {search_credential.account_name} \n PASSWORD: {search_credential.account_password}")
                             else:
-                                print("That Contact Does not exist")
+                                print("This Site Does not exist")
                         elif option2 == 'n':
                             break
                         else:
