@@ -13,13 +13,17 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials = Credentials("Facebook","Igihozo stella", "56789")
 
     def test_credentials(self):
-        """Method that tests whether the new_credentials have been instantiated correctly"""
+        '''
+        Method to test whether the new credentials have been instantiated correctly
+        '''
         self.assertEqual(self.new_credentials.site_name, "Facebook")
         self.assertEqual(self.new_credentials.account_name,"igihozo stella")
         self.assertEqual(self.new_credentials.password, "56789")
 
     def test_save_credentials(self):
-        """Method that tests whether the new credential created has been saved"""
+        '''
+        Method to tests if the new credential created has been saved
+        '''
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
