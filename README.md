@@ -4,4 +4,7 @@ This is a python3.6 based project for storing and generating password for differ
 ## Author
 Igihozo Stella
 ## Installations requirements
-
+## Technologies used
+- PYTHON 3.6
+## LICENSE
+MIT License
