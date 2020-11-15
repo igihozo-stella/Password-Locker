@@ -1,9 +1,17 @@
 ## Password Locker
+
 ## Description
+
 This is a python3.6 based project for storing and generating password for different sites.
+
 ## Author
+
 Igihozo Stella
+
 ## Installations requirements
+
+- clone this repo to your terminal with this command
+- 
 ## Testing The Application
 
 * to run the tests for the two classes credentials and user:
