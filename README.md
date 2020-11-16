@@ -15,6 +15,7 @@ These are the behaviours/features that the application implements for use by a u
 As a user I would like:
 
 * To create an account with my details - log in and password
+* to login using default username 'user' and password '56789'
 * Store my existing login credentials 
 * Generate a password for a new credential/account
 * Delete a saved credential

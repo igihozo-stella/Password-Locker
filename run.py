@@ -43,7 +43,7 @@ def delete_credential(credentials):
 def main():
 
     while True:
-        print("Welcome to PassWord Locker!")
+        print("Welcome to Password Locker!")
         print('\n')
         print("Use these short codes to select an option: Create Account use 'ca': Login to your account use 'li' or 'ex' to exit password locker")
         short_code = input().lower()
@@ -169,7 +169,7 @@ def main():
                             continue
                     elif option == '3':
                         while True:
-                            print("Search for credential to delete")
+                            print("Search by site name for a credential to delete")
 
                             search_name = input()
 
@@ -221,8 +221,8 @@ def main():
             default_user_password = input()
             print('\n')
 
-            while default_user_name != 'testuser' or default_user_password != '56789':
-                print("Wrong userName or password. Username 'testuser' and password '56789'")
+            while default_user_name != 'user' or default_user_password != '56789':
+                print("Wrong userName or password. Username 'user' and password '56789'")
                 print("Enter UserName")
                 default_user_name = input()
 
